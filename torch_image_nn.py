@@ -9,9 +9,6 @@ from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 
-train = datasets.MNIST(root="data", download=True, train=True, transform=ToTensor())
-dataset = DataLoader(train, 32)
-
 class ImageClassifier(nn.Module):
     def __init__(self):
         super().__init__()
@@ -44,6 +41,9 @@ if __name__ == "__main__":
 
     # Training flow
     if do_train:
+        train = datasets.MNIST(root="data", download=True, train=True, transform=ToTensor())
+        dataset = DataLoader(train, 32)
+        
         for epoch in range(10):
             for batch in dataset:
                 X, y = batch
