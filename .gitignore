@@ -1,3 +1,6 @@
+# Data should not be in git
+data/
+
 # MacOS
 .DS_STORE
 
