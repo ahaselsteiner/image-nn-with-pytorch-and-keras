@@ -14,7 +14,7 @@ from torchvision import datasets
 from torchvision.transforms import ToTensor
 
 
-do_train = True
+do_train = False
 n_epochs_to_train = 3
 
 class ImageClassifier(nn.Module):
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     with open(model_file_name, "rb") as f:
         clf.load_state_dict(load(f))
 
-    print(f"Predicting with a {clf.model.parameters()} parameter model: {clf}")
+    print(f"Predicting with a {clf.count_parameters()} parameter model: {clf}")
     img_files = ["img_1.jpg", "img_2.jpg", "img_3.jpg"]
 
     fig = plt.figure(figsize=(5, 4))

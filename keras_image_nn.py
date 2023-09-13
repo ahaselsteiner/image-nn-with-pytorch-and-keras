@@ -8,8 +8,9 @@ from time import perf_counter
 
 import tensorflow as tf
 from keras.models import load_model
+from keras.utils import plot_model
 
-do_train = True
+do_train = False
 n_epochs_to_train = 3
 
 model_fname = "keras_model.h5"
@@ -73,7 +74,6 @@ if __name__ == "__main__":
         )
         """
 
-
         outputs = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(x)
         model = tf.keras.Model(inputs, outputs)
         model.summary()
@@ -94,12 +94,24 @@ if __name__ == "__main__":
             save_freq="epoch",
         )
         t1_start = perf_counter()
-        model.fit(x_train, y_train, epochs=n_epochs_to_train, verbose=2, callbacks=[checkpoint])
+        model.fit(
+            x_train,
+            y_train,
+            epochs=n_epochs_to_train,
+            verbose=2,
+            callbacks=[checkpoint],
+        )
         t1_end = perf_counter()
         print(f"Time for training using Keras is {t1_end - t1_start:.2f} seconds.")
 
-    # Prediction
     model = load_model(model_fname)
+    # Plotting the model requires the graphviz package which is difficult to install
+    # plot_model(model, to_file='keras_model_plot.png', show_shapes=True, show_layer_names=True)
+
+    # Prediction
+    print(
+        f"Predicting with a {model.count_params()} parameter model: {model.summary()}"
+    )
     t1 = perf_counter()
     test_loss, test_acc = model.evaluate(x_test, y_test)
     t2 = perf_counter()

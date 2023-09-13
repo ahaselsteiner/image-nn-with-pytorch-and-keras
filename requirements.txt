@@ -1,3 +1,5 @@
+pydot # for plotting keras models
+graphviz # for plotting keras models
 keras
 tensorflow
 torch
