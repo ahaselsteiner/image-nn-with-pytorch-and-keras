@@ -1,4 +1,4 @@
-# Using a neural network as an image classifier in pytorch and keras
+# Neural network image classifier in pytorch and keras
 
 The same neural network archictecture is implemented in Keras using TensorFlow and in 
 PyTorch to read hand-written digits. The MNIST dataset is used.
@@ -30,4 +30,3 @@ _________________________________________________________________
  dense (Dense)               (None, 10)                650
 
  dense_1 (Dense)             (None, 10)                110
- 
