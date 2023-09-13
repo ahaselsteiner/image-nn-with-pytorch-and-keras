@@ -5,6 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from time import perf_counter
+from PIL import Image
 
 import tensorflow as tf
 from keras.models import load_model
@@ -118,3 +119,23 @@ if __name__ == "__main__":
     print(
         f"Evaluation accuracy using Keras is {test_acc * 100:.2f} and execution time {t2 - t1:.2f} seconds."
     )
+
+    img_files = ["img_1.jpg", "img_2.jpg", "img_3.jpg"]
+
+    # TODO: Bug here
+    print(f"x_test: {x_test}")
+    x_test_array = np.asarray(x_test)
+    print(f"x_test shape: {x_test_array.shape()}")
+
+    fig = plt.figure(figsize=(5, 4))
+    for i, fname in enumerate(img_files):
+        img = Image.open(fname)
+        img_tensor = tf.convert_to_tensor(img) / 255
+        print(f"img_tensor: {img_tensor}")
+        
+        predicted_number = model.predict(img_tensor)
+        ax = fig.add_subplot(1, len(img_files), i + 1, xticks=[], yticks=[])
+        ax.imshow(img, cmap="gray")
+        ax.set_title(str(int(predicted_number)))
+    fig.suptitle("Predicted numbers")
+    plt.show()
