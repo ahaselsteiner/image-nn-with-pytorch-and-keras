@@ -1,7 +1,11 @@
+# Neural net nmage classifier for digits using PyTorch
+#
+# The NN has the same architecture as the Keras TensorFlow NN in keras_image_nn.py
+#
 # This code was adapted from this tutorial, https://www.youtube.com/watch?v=mozBidd58VQ
 # Compared to the tutorial, the neural network architecture was
-# changed: To speed pu training, the second conv2D layer has only 32 outputs
-# and maxpool layers were introduced
+# changed: To speed up training, the second conv2D layer has only 32 outputs
+# and maxpool layers were introduced.
 
 import matplotlib.pyplot as plt
 from time import perf_counter

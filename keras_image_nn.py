@@ -1,5 +1,7 @@
-# This code builds the same neural network as in torch_image_nn.py
-# but uses the Keras package as an abstraction layer.
+# Neural net image classifier for digits using Keras with TensorFlor.
+#
+# The NN has the same architecture as the PyTorch NN in torch_image_nn.py
+#
 # This medium post helped me write the code: https://medium.com/p/555007a50c2e
 
 import numpy as np
@@ -106,6 +108,7 @@ if __name__ == "__main__":
         print(f"Time for training using Keras is {t1_end - t1_start:.2f} seconds.")
 
     model = load_model(model_fname)
+
     # Plotting the model requires the graphviz package which is difficult to install
     # plot_model(model, to_file='keras_model_plot.png', show_shapes=True, show_layer_names=True)
 
