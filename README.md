@@ -1,7 +1,8 @@
-# Neural network image classifier in pytorch and keras
+# Neural network image classifier in PyTorch and Keras using TensorFlow
 
 The same neural network archictecture is implemented in Keras using TensorFlow and in 
-PyTorch to read hand-written digits. The MNIST dataset is used.
+PyTorch to read hand-written digits. The MNIST dataset wich contains hand-written digits
+is used.
 
 Neural network archictecture (28714 parameters in PyTorch, 28824 in Keras/TensorFlow):
  - (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
