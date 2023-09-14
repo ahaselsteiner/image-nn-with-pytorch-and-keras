@@ -15,8 +15,8 @@ python keras_image_nn.py
 
 Set the variables `do_train` and `n_epochs_to_train` in the top section of the scripts.
 
-## Network archictecture
-Neural network archictecture (28714 parameters in PyTorch, 28824 in Keras/TensorFlow):
+## Network architecture
+Neural network architecture (28714 parameters in PyTorch, 28824 in Keras/TensorFlow):
 ![Kereas model plot](keras_model_plot.png)
 
 Layers:
