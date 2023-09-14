@@ -13,7 +13,7 @@ import tensorflow as tf
 from keras.models import load_model
 from keras.utils import plot_model
 
-do_train = False # Do you want to train the model or only apply it?
+do_train = False  # Do you want to train the model or only apply it?
 n_epochs_to_train = 3
 
 model_fname = "keras_model.h5"
@@ -86,9 +86,7 @@ if __name__ == "__main__":
     # plot_model(model, to_file='keras_model_plot.png', show_shapes=True, show_layer_names=True)
 
     # Prediction
-    print(
-        f"Predicting with a {model.count_params()} parameter model."
-    )
+    print(f"Predicting with a {model.count_params()} parameter model.")
     model.summary()
     t1 = perf_counter()
     test_loss, test_acc = model.evaluate(x_test, y_test)

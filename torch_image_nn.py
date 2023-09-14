@@ -18,8 +18,9 @@ from torchvision import datasets
 from torchvision.transforms import ToTensor
 
 
-do_train = False # Do you want to train the model or only apply it?
+do_train = False  # Do you want to train the model or only apply it?
 n_epochs_to_train = 3
+
 
 class ImageClassifier(nn.Module):
     def __init__(self):
@@ -76,8 +77,9 @@ if __name__ == "__main__":
                 loss.backward()
                 opt.step()
             t1_end = perf_counter()
-            print(f"Epoch: {epoch} loss is {loss.item()}, computing time was {t1_end - t1_start:.2f} seconds.") 
-            
+            print(
+                f"Epoch: {epoch} loss is {loss.item()}, computing time was {t1_end - t1_start:.2f} seconds."
+            )
 
         with open(model_file_name, "wb") as f:
             save(clf.state_dict(), f)
