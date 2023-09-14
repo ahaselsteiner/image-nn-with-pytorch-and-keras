@@ -1,5 +1,5 @@
 pydot # for plotting keras models
-graphviz # for plotting keras models
+graphviz # for plotting keras models, cannot be installed with pip, see https://graphviz.gitlab.io/download/
 keras
 matplotlib
 tensorflow

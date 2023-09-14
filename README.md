@@ -17,6 +17,9 @@ Set the variables `do_train` and `n_epochs_to_train` in the top section of the s
 
 ## Network archictecture
 Neural network archictecture (28714 parameters in PyTorch, 28824 in Keras/TensorFlow):
+![Kereas model plot](keras_model_plot.png)
+
+Layers:
  - (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
  - (1): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
  - (2): ReLU()
