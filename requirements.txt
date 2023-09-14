@@ -1,6 +1,7 @@
 pydot # for plotting keras models
 graphviz # for plotting keras models
 keras
+matplotlib
 tensorflow
 torch
 torchvision

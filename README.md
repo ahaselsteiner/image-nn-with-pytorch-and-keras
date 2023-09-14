@@ -17,3 +17,4 @@ Neural network archictecture (28714 parameters in PyTorch, 28824 in Keras/Tensor
  - (9): Flatten(start_dim=1, end_dim=-1)
  - (10): Linear(in_features=64, out_features=10, bias=True)
   
+![Results](predicted_numbers.png)
