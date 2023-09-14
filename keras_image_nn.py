@@ -87,8 +87,9 @@ if __name__ == "__main__":
 
     # Prediction
     print(
-        f"Predicting with a {model.count_params()} parameter model: {model.summary()}"
+        f"Predicting with a {model.count_params()} parameter model."
     )
+    model.summary()
     t1 = perf_counter()
     test_loss, test_acc = model.evaluate(x_test, y_test)
     t2 = perf_counter()
