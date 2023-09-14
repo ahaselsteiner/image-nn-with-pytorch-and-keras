@@ -1,4 +1,4 @@
-# Neural net nmage classifier for digits using PyTorch
+# Neural net image classifier for digits using PyTorch.
 #
 # The NN has the same architecture as the Keras TensorFlow NN in keras_image_nn.py
 #
