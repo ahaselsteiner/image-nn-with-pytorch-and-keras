@@ -36,20 +36,6 @@ if __name__ == "__main__":
         plt.suptitle("MINST training dataset (first 10 images)")
         plt.show()
 
-        """
-        Model in https://medium.com/p/555007a50c2e (maxPool makes training faster)
-        inputs = tf.keras.Input(shape=(28, 28, 1))
-        x = tf.keras.layers.Conv2D(32, (5, 5), activation=tf.nn.relu)(inputs)
-        x = tf.keras.layers.MaxPool2D((2, 2))(x)
-        x = tf.keras.layers.Conv2D(32, (5, 5), activation=tf.nn.relu)(x)
-        x = tf.keras.layers.MaxPool2D((2, 2))(x)
-        x = tf.keras.layers.Conv2D(64, (3, 3), activation=tf.nn.relu)(x)
-        x = tf.keras.layers.MaxPool2D((2, 2))(x)
-        x = tf.keras.layers.Flatten()(x)
-        x = tf.keras.layers.Dense(120, activation=tf.nn.relu)(x)
-        x = tf.keras.layers.Dense(84, activation=tf.nn.relu)(x)
-        """
-
         inputs = tf.keras.Input(shape=(28, 28, 1))
         x = tf.keras.layers.Conv2D(32, (3, 3), activation=tf.nn.relu)(inputs)
         x = tf.keras.layers.MaxPool2D((2, 2))(x)
