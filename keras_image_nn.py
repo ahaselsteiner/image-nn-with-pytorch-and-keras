@@ -49,19 +49,6 @@ if __name__ == "__main__":
         # parameters are,
         # see https://stackoverflow.com/questions/72803869/are-those-keras-and-pytorch-snippets-equivalent
         x = tf.keras.layers.Dense(10, activation=None)(x)
-        """
-        The neural net in PyTorch:
-        self.model = nn.Sequential(
-            nn.Conv2d(1, 32, (3, 3)),
-            nn.ReLU(),
-            nn.Conv2d(32, 64, (3, 3)),
-            nn.ReLU(),
-            nn.Conv2d(64, 64, (3, 3)),
-            nn.ReLU(),
-            nn.Flatten(),
-            nn.Linear(64 * (28 - 6) * (28 - 6), 10),
-        )
-        """
 
         outputs = tf.keras.layers.Dense(10, activation=tf.nn.softmax)(x)
         model = tf.keras.Model(inputs, outputs)
