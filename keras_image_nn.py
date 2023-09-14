@@ -125,20 +125,18 @@ if __name__ == "__main__":
 
     img_files = ["img_1.jpg", "img_2.jpg", "img_3.jpg"]
 
-    # TODO: Bug here
-    print(f"x_test: {x_test}")
-    x_test_array = np.asarray(x_test)
-    print(f"x_test shape: {x_test_array.shape()}")
-
     fig = plt.figure(figsize=(5, 4))
     for i, fname in enumerate(img_files):
         img = Image.open(fname)
         img_tensor = tf.convert_to_tensor(img) / 255
-        print(f"img_tensor: {img_tensor}")
-        
-        predicted_number = model.predict(img_tensor)
+
+        img_tensor = np.expand_dims(img_tensor, axis=2)
+        img_tensor = np.expand_dims(img_tensor, axis=0)
+
+        predictions = model.predict(img_tensor)
+        predicted_number = np.argmax(predictions)
         ax = fig.add_subplot(1, len(img_files), i + 1, xticks=[], yticks=[])
         ax.imshow(img, cmap="gray")
-        ax.set_title(str(int(predicted_number)))
+        ax.set_title(str(predicted_number))
     fig.suptitle("Predicted numbers")
     plt.show()
