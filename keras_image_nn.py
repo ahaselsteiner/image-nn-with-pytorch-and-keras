@@ -78,7 +78,7 @@ if __name__ == "__main__":
             callbacks=[checkpoint],
         )
         t1_end = perf_counter()
-        print(f"Time for training using Keras is {t1_end - t1_start:.2f} seconds.")
+        print(f"Time for training using Keras/TensorFlow is {t1_end - t1_start:.2f} seconds.")
 
     model = load_model(model_fname)
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     test_loss, test_acc = model.evaluate(x_test, y_test)
     t2 = perf_counter()
     print(
-        f"Evaluation accuracy using Keras is {test_acc * 100:.2f} and execution time {t2 - t1:.2f} seconds."
+        f"Evaluation accuracy using Keras/TensorFlow is {test_acc * 100:.2f} and execution time {t2 - t1:.2f} seconds."
     )
 
     img_files = ["img_1.jpg", "img_2.jpg", "img_3.jpg"]
