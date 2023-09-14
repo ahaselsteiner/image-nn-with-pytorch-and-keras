@@ -18,7 +18,7 @@ from torchvision import datasets
 from torchvision.transforms import ToTensor
 
 
-do_train = False
+do_train = False # Do you want to train the model or only apply it?
 n_epochs_to_train = 3
 
 class ImageClassifier(nn.Module):

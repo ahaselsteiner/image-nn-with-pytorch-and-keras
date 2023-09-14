@@ -13,7 +13,7 @@ import tensorflow as tf
 from keras.models import load_model
 from keras.utils import plot_model
 
-do_train = False
+do_train = False # Do you want to train the model or only apply it?
 n_epochs_to_train = 3
 
 model_fname = "keras_model.h5"
